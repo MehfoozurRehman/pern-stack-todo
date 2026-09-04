@@ -31,8 +31,12 @@ function App() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const title = e.currentTarget.title.value;
-          const description = e.currentTarget.description.value;
+          const target = e.currentTarget as typeof e.currentTarget & {
+            title: { value: string };
+            description: { value: string };
+          };
+          const title = target.title.value;
+          const description = target.description.value;
           fetch("http://localhost:3000/todo", {
             method: "POST",
             headers: {
