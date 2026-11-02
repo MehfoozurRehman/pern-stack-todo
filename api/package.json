@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec ts-node index.ts",
-    "start": "ts-node index.ts"
+    "dev": "node init && nodemon --exec ts-node index.ts",
+    "start": "node init && ts-node index.ts"
   },
   "keywords": [],
   "author": "",
